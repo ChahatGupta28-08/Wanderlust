@@ -1,0 +1,57 @@
+<% layout("layout/boilerplate") %>
+<body>
+  <div class="row">
+  <div class="col-8 offset-2">
+    <form method="post" action="/listing/<%= d._id %>?_method=PUT" class="needs-validation" novalidate enctype="multipart/form-data">
+        <div class="mb-3">
+          <label for="title" class="form-label">Title</label>
+        <input value="<%= d.title%>" id="title" class= "form-control" name="listing[title]" required>
+        <div class="valid-feedback">
+          Looks good!
+        </div>
+         </div>
+         <div class="mb-3">
+          <label for="description"class="form-label">Description</label>
+        <textarea name="listing[description]" class= "form-control" id="description" required><%= d.description%></textarea>
+        <div class="invalid-feedback">
+          Description is required
+        </div>
+        </div>
+        <div class="mb-3" > 
+          <img src="<%=d.image.url%>" style="height:10rem; width:10rem;">
+        </div>
+       
+        <div class="mb-3">
+          <label for="image" for="image"class="form-label">Upload New Image</label>
+          <input   id="image" type="file" class= "form-control" name="listing[image]" >
+        </div>
+        <div class="row">
+        <div class="mb-3 col-md-4 col-lg-4">
+          <label for="price" for="price"class="form-label">Price</label>
+          <input value="<%= d.price%>"  id="price" class= "form-control" name="listing[price]" required>
+          <div class="invalid-feedback">
+            Price is required
+          </div>
+        </div>
+      <div class="mb-3 col-md-8 col-lg-8">
+        <label for="country" for="country"class="form-label">Country</label>
+        <input value="<%= d.country%>"  id="country" class= "form-control" name="listing[country]" required>
+        <div class="invalid-feedback">
+      Country is required
+        </div>
+      </div>
+    </div>
+      <div class="mb-3">
+        <label for="location"class="form-label">Location</label>
+        <input value="<%= d.location%>" id="location" class= "form-control" name="listing[location]" required>
+        <div class="invalid-feedback">
+          Location is required
+        </div>
+      </div>
+      
+        <button class="btn btn-dark">Edit</button>
+    </form>
+  </div>
+</div>
+<br><br>
+</body>
