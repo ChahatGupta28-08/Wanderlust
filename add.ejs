@@ -1,0 +1,94 @@
+<% layout("layout/boilerplate") %>
+<style>
+select{
+  margin-top:0.5rem;
+  height: 2.5rem;
+  padding: 10px 20px;
+  border-radius:5px;
+  font-size:0.8rem;
+  padding-left:-1rem;
+  opacity:0.7;
+}
+
+
+</style>
+  <div class="row">
+    <div class="col-8 offset-2">
+
+    <form method="post" action="/listing"  class="needs-validation" novalidate enctype="multipart/form-data">
+      <h2>Create a new Listing</h2>
+         <div class="mb-3">
+             <label for="title" class="form-label">Title</label>
+             <input name="listing[title]" id="title" placeholder="Add a catchy title"  name="title"class="form-control" required >
+             <div class="valid-feedback">
+              Looks good!
+            </div>
+        </div>
+        <div class="mb-3">
+              <label for="description" class="form-label">Description</label>
+              <textarea name="listing[description]"  id="description" class="form-control" required></textarea>
+              <div class="invalid-feedback">
+              Please enter description
+              </div>
+         </div> 
+        
+         <div class="mb-3">
+          <label for="image" class="form-label">Upload Image</label>
+          <input name="listing[image]" id="image" type="file" class="form-control"  name="image" required >
+          <div class="invalid-feedback">
+           Image is required
+          </div>
+     </div>
+      <div class="row">
+        <div class="mb-3 col-md-4 col-lg-4">
+          <label for="number" class="form-label">Price</label>
+          <input id="number" placeholder="1200" class="form-control" name="listing[price]" required>
+          <div class="invalid-feedback">
+            Price is required
+          </div>
+        </div>
+        <div class="mb-3 col-md-4 col-lg-4">
+          <label for="country" class="form-label">Country</label>
+        <input  name="listing[country]" placeholder="India" class="form-control"id="country" required>
+        <div class="invalid-feedback">
+      Country is required
+        </div>
+        </div>
+        <div class="mb-3 col-md-4 col-lg-4">
+        
+        <label for="category" style="font-size:1rem;">Category</label>
+        <br>
+       <select name="listing[category]" id="category">
+        <option value="" selected >Category</option>
+       <option value="Trending">Trending</option>
+       <option value="Rooms">Rooms</option>
+      <option value="Iconic Cities" >Iconic Cities</option>
+      <option value="Mountains" >Mountains</option>
+      <option value="Castles" >Castles</option>
+      <option value="Amazing Pools" >Amazing Pools</option>
+      <option value="Farms" >Farms</option>
+      <option value="Arctic" >Arctic</option>
+</select>
+      </div>
+      </div>
+        <div class="mb-3">
+          <label for="location"class="form-label">Location</label>
+        <input type="text" name="listing[location]" class="form-control" placeholder="Jaipur,Rajasthan"id="location" required>
+        <div class="invalid-feedback">
+          Location is required
+        </div>
+        </div>
+        
+       
+        <button class="btn btn-dark">Add</buttton>
+         
+          
+        </div>
+        
+    </form>
+   
+  </div>
+</div>
+<br><br>
+  
+
